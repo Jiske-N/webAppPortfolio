@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Typography, useMediaQuery, MenuItem, Menu } from "@mui/material";
+import { useMediaQuery, MenuItem, Menu } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useLocation, useNavigate, Link } from "react-router-dom";
@@ -21,24 +21,7 @@ const Navigation = () => {
     };
 
     return (
-        <FlexStyling padding="1.2rem 6%">
-            <FlexStyling gap="1.75rem">
-                <Typography
-                    fontWeight="bold"
-                    // clamp sets a minimum, preferred and maximum font size - can be used for width as well
-                    fontSize="clamp(1rem, 2rem, 2.25rem)"
-                    color={textPrimary}
-                    onClick={() => navigate("/")}
-                    sx={{
-                        "&:hover": {
-                            color: hover,
-                            cursor: "pointer",
-                        },
-                    }}
-                >
-                    Jiske-N
-                </Typography>
-            </FlexStyling>
+        <>
             {/* desktop nav */}
             {isNonMobileScreens && (
                 <FlexStyling gap="2rem">
@@ -222,7 +205,7 @@ const Navigation = () => {
                     </Link>
                 </Menu>
             )}
-        </FlexStyling>
+        </>
     );
 };
 
