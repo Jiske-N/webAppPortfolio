@@ -5,7 +5,7 @@ import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import FlexStyling from "./FlexStyling";
 
-const Navbar = () => {
+const Navigation = () => {
     const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
     const navigate = useNavigate();
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px");
@@ -20,7 +20,7 @@ const Navbar = () => {
     };
 
     return (
-        <FlexStyling padding="1rem 6%">
+        <FlexStyling padding="1.2rem 6%">
             <FlexStyling gap="1.75rem">
                 <Typography
                     fontWeight="bold"
@@ -221,4 +221,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Navigation;
