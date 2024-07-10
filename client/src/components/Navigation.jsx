@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import FlexStyling from "./FlexStyling";
+import { hover, textPrimary } from "../../theme.js";
 
 const Navigation = () => {
     const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
@@ -26,11 +27,11 @@ const Navigation = () => {
                     fontWeight="bold"
                     // clamp sets a minimum, preferred and maximum font size - can be used for width as well
                     fontSize="clamp(1rem, 2rem, 2.25rem)"
-                    color="black"
+                    color={textPrimary}
                     onClick={() => navigate("/")}
                     sx={{
                         "&:hover": {
-                            color: "#15253D",
+                            color: hover,
                             cursor: "pointer",
                         },
                     }}
@@ -44,11 +45,12 @@ const Navigation = () => {
                     <MenuItem
                         onClick={() => navigate("/about")}
                         sx={{
+                            color: textPrimary,
                             fontWeight: "bold",
                             textDecoration:
                                 currentPage === "/about" ? "underline" : "none",
                             "&:hover": {
-                                color: "#15253D",
+                                color: hover,
                                 cursor: "pointer",
                             },
                         }}
@@ -58,13 +60,14 @@ const Navigation = () => {
                     <MenuItem
                         onClick={() => navigate("/portfolio")}
                         sx={{
+                            color: textPrimary,
                             fontWeight: "bold",
                             textDecoration:
                                 currentPage === "/portfolio"
                                     ? "underline"
                                     : "none",
                             "&:hover": {
-                                color: "#15253D",
+                                color: hover,
                                 cursor: "pointer",
                             },
                         }}
@@ -74,13 +77,14 @@ const Navigation = () => {
                     <MenuItem
                         onClick={() => navigate("/contact")}
                         sx={{
+                            color: textPrimary,
                             fontWeight: "bold",
                             textDecoration:
                                 currentPage === "/contact"
                                     ? "underline"
                                     : "none",
                             "&:hover": {
-                                color: "#15253D",
+                                color: hover,
                                 cursor: "pointer",
                             },
                         }}
@@ -90,13 +94,14 @@ const Navigation = () => {
                     <MenuItem
                         onClick={() => navigate("/resume")}
                         sx={{
+                            color: textPrimary,
                             fontWeight: "bold",
                             textDecoration:
                                 currentPage === "/resume"
                                     ? "underline"
                                     : "none",
                             "&:hover": {
-                                color: "#15253D",
+                                color: hover,
                                 cursor: "pointer",
                             },
                         }}
@@ -114,7 +119,7 @@ const Navigation = () => {
                             onClick={handleClick}
                             sx={{
                                 "&:hover": {
-                                    color: "#15253D",
+                                    hover,
                                     cursor: "pointer",
                                 },
                             }}
@@ -124,7 +129,7 @@ const Navigation = () => {
                             onClick={handleClick}
                             sx={{
                                 "&:hover": {
-                                    color: "#15253D",
+                                    hover,
                                     cursor: "pointer",
                                 },
                             }}
@@ -144,13 +149,13 @@ const Navigation = () => {
                             onClick={handleClose}
                             sx={{
                                 fontWeight: "bold",
-                                color: "black",
+                                color: textPrimary,
                                 textDecoration:
                                     currentPage === "/contact"
                                         ? "underline"
                                         : "none",
                                 "&:hover": {
-                                    color: "#15253D",
+                                    color: hover,
                                     cursor: "pointer",
                                 },
                             }}
@@ -163,7 +168,7 @@ const Navigation = () => {
                             onClick={handleClose}
                             sx={{
                                 fontWeight: "bold",
-                                color: "black",
+                                color: textPrimary,
                                 textDecoration:
                                     currentPage === "/resume"
                                         ? "underline"
@@ -182,7 +187,7 @@ const Navigation = () => {
                             onClick={handleClose}
                             sx={{
                                 fontWeight: "bold",
-                                color: "black",
+                                color: textPrimary,
                                 textDecoration:
                                     currentPage === "/contact"
                                         ? "underline"
@@ -201,7 +206,7 @@ const Navigation = () => {
                             onClick={handleClose}
                             sx={{
                                 fontWeight: "bold",
-                                color: "black",
+                                color: textPrimary,
                                 textDecoration:
                                     currentPage === "/resume"
                                         ? "underline"

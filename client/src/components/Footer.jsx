@@ -2,6 +2,7 @@ import * as React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import FlexStyling from "./FlexStyling";
+import { background } from "../../theme.js";
 
 // icon imports
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -34,7 +35,7 @@ const Footer = () => {
         >
             <BottomNavigation
                 sx={{
-                    backgroundColor: "#6B717E",
+                    backgroundColor: background,
                     opacity: 0.9,
                 }}
                 value={value}
