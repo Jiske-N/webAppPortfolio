@@ -9,7 +9,7 @@ export default function Contact() {
         <FlexStyling
             margin="5%"
             borderRadius="0.2rem"
-            style={isNonMobileScreens ? { width: "45%" } : { width: "auto" }}
+            style={isNonMobileScreens ? { width: "45.4%" } : { width: "auto" }}
         >
             <Form />
         </FlexStyling>

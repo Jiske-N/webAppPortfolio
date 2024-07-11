@@ -1,24 +1,129 @@
+import FlexStyling from "../../components/FlexStyling";
+import { useMediaQuery, Typography, List, ListItem } from "@mui/material";
+import { textPrimary, hover } from "../../../theme";
+
 export default function Resume() {
+    const isNonMobileScreens = useMediaQuery("(min-width: 1200px");
+    const handleClick = () => {
+        const pdfUrl = "../../assets/Resume.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "Resume.pdf"; // specify the filename
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
-        <div>
-            <h1>Resume Page</h1>
-            <p>
-                Donec a volutpat quam. Curabitur nec varius justo, sed rutrum
-                ligula. Curabitur pellentesque turpis sit amet eros iaculis, a
-                mollis arcu dictum. Ut vel ante eget massa ornare placerat.
-                Etiam nisl orci, finibus sodales volutpat et, hendrerit ut
-                dolor. Suspendisse porta dictum nunc, sed pretium risus rutrum
-                eget. Nam consequat, ligula in faucibus vestibulum, nisi justo
-                laoreet risus, luctus luctus mi lacus sit amet libero. Class
-                aptent taciti sociosqu ad litora torquent per conubia nostra,
-                per inceptos himenaeos. Mauris pretium condimentum tellus eget
-                lobortis. Interdum et malesuada fames ac ante ipsum primis in
-                faucibus. Donec placerat accumsan mi, ut congue neque placerat
-                eu. Donec nec ipsum in velit pellentesque vehicula sit amet at
-                augue. Maecenas aliquam bibendum congue. Pellentesque semper,
-                lectus non ullamcorper iaculis, est ligula suscipit velit, sed
-                bibendum turpis dui in sapien.
-            </p>
-        </div>
+        <FlexStyling
+            margin="5%"
+            borderRadius="0.2rem"
+            style={isNonMobileScreens ? { width: "45.4%" } : { width: "auto" }}
+        >
+            <FlexStyling
+                sx={{ width: "100%" }}
+                flexDirection="column"
+                style={{ alignItems: "flex-start" }}
+                margin="1.2rem 4%"
+                color={textPrimary}
+            >
+                <Typography
+                    sx={{
+                        fontSize: "1.6rem",
+                        fontWeight: "bold",
+                        marginBottom: "1rem",
+                    }}
+                >
+                    Resume
+                </Typography>
+                <FlexStyling flexDirection="row">
+                    <Typography
+                        sx={{
+                            fontSize: "1rem",
+                            margin: "1rem 0.4rem 1rem 0",
+                        }}
+                    >
+                        Download my
+                    </Typography>
+                    <Typography
+                        onClick={handleClick}
+                        sx={{
+                            fontSize: "1rem",
+                            // margin: "1rem 0",
+                            fontWeight: "bold",
+                            color: hover,
+                            "&:hover": {
+                                color: textPrimary,
+                                cursor: "pointer",
+                            },
+                        }}
+                    >
+                        resume
+                    </Typography>
+                </FlexStyling>
+                <Typography
+                    sx={{
+                        fontSize: "1.2rem",
+                        margin: "1rem 0 0 0",
+                    }}
+                >
+                    Front-end Proficiencies
+                </Typography>
+                <List>
+                    <ListItem>
+                        <Typography>HTML</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>CSS</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>Javascript</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>jQuery</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>responsive design</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>React</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>Bootstrap</Typography>
+                    </ListItem>
+                </List>
+                <Typography
+                    sx={{
+                        fontSize: "1.2rem",
+                        margin: "1rem 0 0 0",
+                    }}
+                >
+                    Back-end Proficiencies
+                </Typography>
+                <List>
+                    <ListItem>
+                        <Typography>APIs</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>Node</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>Express</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>MySQL, Sequelize</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>MongoDb, Mongoose</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>REST</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>GraphQL</Typography>
+                    </ListItem>
+                </List>
+            </FlexStyling>
+        </FlexStyling>
     );
 }
