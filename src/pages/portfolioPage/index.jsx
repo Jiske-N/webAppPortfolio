@@ -18,8 +18,7 @@ export default function Portfolio() {
             title: "Investor Dashboard",
             technology: "Coming Soon, MERN Stack, Material UI",
             repository: "https://github.com/Jiske-N?tab=repositories",
-            screenshot:
-                "src/assets/investor-dashboard-placeholder-screenshot.png",
+            screenshot: "/investor-dashboard-placeholder-screenshot.png",
             deployment: "https://awesome-foursome.github.io/boardgame-bliss/",
         },
         {
@@ -27,7 +26,7 @@ export default function Portfolio() {
             title: "Task Master",
             technology: "Node, Express, Handlebars, Sequelize, Postgres",
             repository: "https://github.com/Jiske-N/Task-Manager",
-            screenshot: "src/assets/taskmaster.png",
+            screenshot: "/taskmaster.png",
             deployment:
                 "https://awesome-foursome.github.io/boardgame-bliss/chess-page.html",
         },
@@ -36,7 +35,7 @@ export default function Portfolio() {
             title: "Board Game Bliss",
             technology: "HTML, CSS, Javascript, Bulma, Third Party API's",
             repository: "https://github.com/awesome-foursome/boardgame-bliss",
-            screenshot: "src/assets/boardgame-bliss-screenshot.png",
+            screenshot: "/boardgame-bliss-screenshot.png",
             deployment: "https://awesome-foursome.github.io/boardgame-bliss/",
         },
         {
@@ -44,7 +43,7 @@ export default function Portfolio() {
             title: "Tech Blog",
             technology: "Node, Express, Handlebars, Sequelize, Bootstrap",
             repository: "https://github.com/Jiske-N/tech-blog",
-            screenshot: "src/assets/tech-blog-screenshot.png",
+            screenshot: "/tech-blog-screenshot.png",
             deployment:
                 "https://awesome-foursome.github.io/boardgame-bliss/rules-page.html",
         },
@@ -53,7 +52,7 @@ export default function Portfolio() {
             title: "Social Network API Back-End",
             technology: "Node, Express, Mongoose",
             repository: "https://github.com/Jiske-N/noSQL-SocialNetworkAPI",
-            screenshot: "src/assets/social-network-api-screenshot.png",
+            screenshot: "/social-network-api-screenshot.png",
             deployment:
                 "https://awesome-foursome.github.io/boardgame-bliss/other-games.html",
         },

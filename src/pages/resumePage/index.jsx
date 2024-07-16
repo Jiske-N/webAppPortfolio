@@ -11,7 +11,7 @@ export default function Resume() {
     const isNonMobileScreens = useMediaQuery("(min-width: 1200px");
 
     const handleClick = () => {
-        const pdfUrl = "../../assets/Resume.pdf";
+        const pdfUrl = "/Resume.pdf";
         const link = document.createElement("a");
         link.href = pdfUrl;
         // specify the filename
