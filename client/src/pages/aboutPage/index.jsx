@@ -2,8 +2,12 @@ import { Box, Typography, useMediaQuery } from "@mui/material";
 import FlexStyling from "../../components/FlexStyling";
 import profilePicture from "../../assets/profile2.jpg";
 import { textPrimary } from "../../../theme";
+import { useEffect } from "react";
 
 export default function About() {
+    useEffect(() => {
+        document.title = "JSN - About";
+    }, []);
     const isNonMobileScreens = useMediaQuery("(min-width: 650px");
 
     return (

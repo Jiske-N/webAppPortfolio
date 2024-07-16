@@ -1,8 +1,12 @@
 import FlexStyling from "../../components/FlexStyling";
 import { useMediaQuery, Typography, List, ListItem } from "@mui/material";
 import { textPrimary, hover } from "../../../theme";
+import { useEffect } from "react";
 
 export default function Resume() {
+    useEffect(() => {
+        document.title = "JSN - Resume";
+    }, []);
     const isNonMobileScreens = useMediaQuery("(min-width: 1200px");
     const handleClick = () => {
         const pdfUrl = "../../assets/Resume.pdf";

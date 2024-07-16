@@ -2,8 +2,12 @@ import { Box, Grid, useMediaQuery } from "@mui/material";
 import FlexStyling from "../../components/FlexStyling";
 import { textPrimary } from "../../../theme";
 import Project from "../../components/Project";
+import { useEffect } from "react";
 
 export default function Portfolio() {
+    useEffect(() => {
+        document.title = "JSN - Portfolio";
+    }, []);
     const isMobileScreens = useMediaQuery("(max-width: 800px");
     const isTabletScreens = useMediaQuery("(max-width: 1300px");
 
