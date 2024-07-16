@@ -7,7 +7,9 @@ export default function Resume() {
     useEffect(() => {
         document.title = "JSN - Resume";
     }, []);
+
     const isNonMobileScreens = useMediaQuery("(min-width: 1200px");
+
     const handleClick = () => {
         const pdfUrl = "../../assets/Resume.pdf";
         const link = document.createElement("a");
@@ -18,6 +20,68 @@ export default function Resume() {
         link.click();
         document.body.removeChild(link);
     };
+
+    const frontEnd = [
+        {
+            key: 1,
+            proficiency: "HTML",
+        },
+        {
+            key: 2,
+            proficiency: "CSS",
+        },
+        {
+            key: 3,
+            proficiency: "Javascript",
+        },
+        {
+            key: 4,
+            proficiency: "jQuery",
+        },
+        {
+            key: 5,
+            proficiency: "Responsive Design",
+        },
+        {
+            key: 6,
+            proficiency: "React",
+        },
+        {
+            key: 7,
+            proficiency: "Bootstrap",
+        },
+    ];
+
+    const backEnd = [
+        {
+            key: 1,
+            proficiency: "APIs",
+        },
+        {
+            key: 2,
+            proficiency: "Node",
+        },
+        {
+            key: 3,
+            proficiency: "Express",
+        },
+        {
+            key: 4,
+            proficiency: "MySQL, Sequelize",
+        },
+        {
+            key: 5,
+            proficiency: "MongoDb, Mongoose",
+        },
+        {
+            key: 6,
+            proficiency: "REST",
+        },
+        {
+            key: 7,
+            proficiency: "GraphQL",
+        },
+    ];
 
     return (
         <FlexStyling
@@ -54,7 +118,6 @@ export default function Resume() {
                         onClick={handleClick}
                         sx={{
                             fontSize: "1rem",
-                            // margin: "1rem 0",
                             fontWeight: "bold",
                             color: hover,
                             "&:hover": {
@@ -75,27 +138,11 @@ export default function Resume() {
                     Front-end Proficiencies
                 </Typography>
                 <List>
-                    <ListItem>
-                        <Typography>HTML</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>CSS</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>Javascript</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>jQuery</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>responsive design</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>React</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>Bootstrap</Typography>
-                    </ListItem>
+                    {frontEnd.map((item) => (
+                        <ListItem key={item.key}>
+                            <Typography>{item.proficiency}</Typography>
+                        </ListItem>
+                    ))}
                 </List>
                 <Typography
                     sx={{
@@ -106,27 +153,11 @@ export default function Resume() {
                     Back-end Proficiencies
                 </Typography>
                 <List>
-                    <ListItem>
-                        <Typography>APIs</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>Node</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>Express</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>MySQL, Sequelize</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>MongoDb, Mongoose</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>REST</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography>GraphQL</Typography>
-                    </ListItem>
+                    {backEnd.map((item) => (
+                        <ListItem key={item.key}>
+                            <Typography>{item.proficiency}</Typography>
+                        </ListItem>
+                    ))}
                 </List>
             </FlexStyling>
         </FlexStyling>

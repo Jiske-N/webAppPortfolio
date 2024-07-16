@@ -3,8 +3,6 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import FlexStyling from "./FlexStyling";
 import { background, textPrimary, hover } from "../../theme.js";
-
-// icon imports
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { SvgIcon } from "@mui/material";

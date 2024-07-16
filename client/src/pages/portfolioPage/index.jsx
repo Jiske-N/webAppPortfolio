@@ -8,6 +8,7 @@ export default function Portfolio() {
     useEffect(() => {
         document.title = "JSN - Portfolio";
     }, []);
+
     const isMobileScreens = useMediaQuery("(max-width: 800px");
     const isTabletScreens = useMediaQuery("(max-width: 1300px");
 
@@ -60,20 +61,17 @@ export default function Portfolio() {
 
     return (
         <>
-            {/* <Box sx={{ width: "100%" }}> */}
             <Grid width="100%" container spacing={2}>
                 {projects.map((project) => (
                     <>
-                        {/* <Box width="100%" sx={{ flexGrow: 1 }}> */}
+                        {/* desktop view */}
                         {!isTabletScreens && !isMobileScreens && (
                             <Grid key={project.key} item xs={4}>
                                 <FlexStyling
                                     color={textPrimary}
                                     margin="5%"
                                     borderRadius="0.2rem"
-                                    // flexDirection="row"
                                     style={{ alignItems: "flex-start" }}
-                                    // width="40%"
                                     boxSizing="border-box"
                                 >
                                     <Box margin="1% 1.5%" minWidth="97%">
@@ -83,6 +81,7 @@ export default function Portfolio() {
                             </Grid>
                         )}
 
+                        {/* tablet view */}
                         {isTabletScreens && !isMobileScreens && (
                             <Grid key={project.key} item xs={6}>
                                 <FlexStyling
@@ -101,6 +100,7 @@ export default function Portfolio() {
                             </Grid>
                         )}
 
+                        {/* mobile view */}
                         {isMobileScreens && (
                             <Grid
                                 key={project.key}
@@ -114,7 +114,6 @@ export default function Portfolio() {
                                     borderRadius="0.2rem"
                                     flexDirection="column"
                                     style={{ alignItems: "flex-start" }}
-                                    // width="80%"
                                     boxSizing="border-box"
                                 >
                                     <Box margin="1% 1.5%" minWidth="97%">
@@ -126,7 +125,6 @@ export default function Portfolio() {
                     </>
                 ))}
             </Grid>
-            {/* </Box> */}
         </>
     );
 }

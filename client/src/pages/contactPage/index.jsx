@@ -7,6 +7,7 @@ export default function Contact() {
     useEffect(() => {
         document.title = "JSN - Contact";
     }, []);
+
     const isNonMobileScreens = useMediaQuery("(min-width: 1200px");
 
     return (

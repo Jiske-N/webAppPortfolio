@@ -10,6 +10,8 @@ const Form = () => {
     const [message, setMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
+    const [isValid, setIsValid] = useState(false);
+
     const handleInputChange = (e) => {
         const { target } = e;
         const inputType = target.name;
@@ -25,11 +27,15 @@ const Form = () => {
 
         if (!name || !email || !message) {
             setErrorMessage("Please ensure all fields are filled in correctly");
+            setIsValid(false);
             return;
         } else if (!validateEmail(email)) {
             setErrorMessage("Please ensure email address is valid");
+            setIsValid(false);
+            return;
         } else {
             setErrorMessage(" ");
+            setIsValid(true);
         }
     };
 
@@ -126,7 +132,7 @@ const Form = () => {
                         </Typography>
                     )}
                 </Typography>
-                <Button type="submit" variant="contained">
+                <Button disabled={!isValid} type="submit" variant="contained">
                     Submit
                 </Button>
             </form>

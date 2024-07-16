@@ -8,19 +8,18 @@ const Project = (project) => {
         <FlexStyling
             boxSizing="border-box"
             padding="1.2rem 6%"
-            // maxWidth="50%"
             sx={{
                 backgroundImage: `url(${project.screenshot})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 opacity: 1,
-                // minWidth: "50%",
                 maxWidth: "100%",
                 aspectRatio: 3 / 2,
             }}
         >
             <Box maxWidth="100%">
+                {/* upper title and icon */}
                 <Box style={{ display: "inline-block" }}>
                     <FlexStyling
                         marginBottom="1.5rem"
@@ -43,21 +42,12 @@ const Project = (project) => {
                                 style={{
                                     display: "flex",
                                     flexWrap: "wrap",
-                                    // width: "10rem",
-                                    // maxWidth: "100%",
                                     textDecoration: "none",
                                     marginRight: "1rem",
                                 }}
                             >
                                 <Typography
                                     sx={{
-                                        // display: "flex",
-                                        // flexWrap: "wrap",
-                                        // width: "10rem",
-                                        // whiteSpace: "nowrap",
-                                        // maxWidth: "50%",
-                                        // wordWrap: "break-word",
-                                        // overflowWrap: "break-word",
                                         fontSize: "1.4rem",
                                         color: textPrimary,
                                         fontWeight: "bold",
@@ -72,7 +62,6 @@ const Project = (project) => {
                             </a>
                             {/* I think this is supposed to be an anchor tag rather than link or useNavigate as it's an external url??? */}
                             <a href={project.repository}>
-                                {/* <MenuItem> */}
                                 <GitHubIcon
                                     label="GitHub"
                                     value="github"
@@ -84,11 +73,12 @@ const Project = (project) => {
                                         },
                                     }}
                                 />
-                                {/* </MenuItem> */}
                             </a>
                         </FlexStyling>
                     </FlexStyling>
                 </Box>
+
+                {/* lower text */}
                 <Box style={{ display: "inline-block" }}>
                     <FlexStyling
                         gap="1.75rem"

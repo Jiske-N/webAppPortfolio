@@ -8,6 +8,7 @@ export default function About() {
     useEffect(() => {
         document.title = "JSN - About";
     }, []);
+
     const isNonMobileScreens = useMediaQuery("(min-width: 650px");
 
     return (

@@ -6,16 +6,20 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 import FlexStyling from "./FlexStyling";
 import { hover, textPrimary } from "../../theme.js";
 
+// not sure if I did this wrong and the project was asking for a navigation button set up similar to:
+// the projectPage and project component or the proficiencies within the resumePage
 const Navigation = () => {
-    const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
-    const navigate = useNavigate();
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px");
-    const currentPage = useLocation().pathname;
-    // const ref = React.useRef();
+    const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
     const open = Boolean(isMobileMenuToggled);
+
+    const navigate = useNavigate();
+    const currentPage = useLocation().pathname;
+
     const handleClick = (event) => {
         setIsMobileMenuToggled(event.currentTarget.parentElement);
     };
+
     const handleClose = () => {
         setIsMobileMenuToggled(!isMobileMenuToggled);
     };
