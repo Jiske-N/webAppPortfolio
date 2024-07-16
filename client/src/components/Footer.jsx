@@ -2,7 +2,7 @@ import * as React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import FlexStyling from "./FlexStyling";
-import { background } from "../../theme.js";
+import { background, textPrimary, hover } from "../../theme.js";
 
 // icon imports
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -26,7 +26,7 @@ const Footer = () => {
     return (
         <FlexStyling
             padding="0.3rem 6%"
-            position="absolute"
+            position="relative"
             left="0"
             bottom="0"
             right="0"
@@ -41,11 +41,19 @@ const Footer = () => {
                 value={value}
                 onChange={handleChange}
             >
+                {/* I think these are supposed to be an anchor tags rather than link or useNavigate as they're external urls??? */}
                 <a href="https://github.com/Jiske-N/">
                     <BottomNavigationAction
                         label="GitHub"
                         value="github"
                         icon={<GitHubIcon />}
+                        sx={{
+                            color: textPrimary,
+                            "&:hover": {
+                                color: hover,
+                                cursor: "pointer",
+                            },
+                        }}
                     />
                 </a>
                 <a href="https://au.linkedin.com">
@@ -53,6 +61,13 @@ const Footer = () => {
                         label="LinkedIn"
                         value="linkedin"
                         icon={<LinkedInIcon />}
+                        sx={{
+                            color: textPrimary,
+                            "&:hover": {
+                                color: hover,
+                                cursor: "pointer",
+                            },
+                        }}
                     />
                 </a>
                 <a href="https://stackoverflow.com">
@@ -60,6 +75,13 @@ const Footer = () => {
                         label="stackoverflow"
                         value="stackoverflow"
                         icon={StackOverflowIcon}
+                        sx={{
+                            color: textPrimary,
+                            "&:hover": {
+                                color: hover,
+                                cursor: "pointer",
+                            },
+                        }}
                     />
                 </a>
             </BottomNavigation>

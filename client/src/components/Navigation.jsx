@@ -26,12 +26,12 @@ const Navigation = () => {
             {isNonMobileScreens && (
                 <FlexStyling gap="2rem">
                     <MenuItem
-                        onClick={() => navigate("/about")}
+                        onClick={() => navigate("/")}
                         sx={{
                             color: textPrimary,
                             fontWeight: "bold",
                             textDecoration:
-                                currentPage === "/about" ? "underline" : "none",
+                                currentPage === "/" ? "underline" : "none",
                             "&:hover": {
                                 color: hover,
                                 cursor: "pointer",
@@ -127,7 +127,7 @@ const Navigation = () => {
                     open={open}
                     onClose={handleClose}
                 >
-                    <Link to="/about">
+                    <Link to="/">
                         <MenuItem
                             onClick={handleClose}
                             sx={{
