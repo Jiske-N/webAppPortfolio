@@ -47,6 +47,7 @@ const Form = () => {
         setName("");
         setMessage("");
         setEmail("");
+        setIsValid(false);
     };
 
     return (
