@@ -12,7 +12,8 @@ export default function Resume() {
         const pdfUrl = "../../assets/Resume.pdf";
         const link = document.createElement("a");
         link.href = pdfUrl;
-        link.download = "Resume.pdf"; // specify the filename
+        // specify the filename
+        link.download = "Resume.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

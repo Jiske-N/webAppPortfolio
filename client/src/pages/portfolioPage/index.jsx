@@ -71,13 +71,13 @@ export default function Portfolio() {
                                     color={textPrimary}
                                     margin="5%"
                                     borderRadius="0.2rem"
-                                    flexDirection="row"
+                                    // flexDirection="row"
                                     style={{ alignItems: "flex-start" }}
                                     // width="40%"
                                     boxSizing="border-box"
                                 >
                                     <Box margin="1% 1.5%" minWidth="97%">
-                                        <Project width="100%" {...project} />
+                                        <Project {...project} />
                                     </Box>
                                 </FlexStyling>
                             </Grid>
@@ -91,29 +91,34 @@ export default function Portfolio() {
                                     borderRadius="0.2rem"
                                     flexDirection="column"
                                     style={{ alignItems: "flex-start" }}
-                                    width="80%"
+                                    // width="80%"
                                     boxSizing="border-box"
                                 >
                                     <Box margin="1% 1.5%" minWidth="97%">
-                                        <Project width="100%" {...project} />
+                                        <Project {...project} />
                                     </Box>
                                 </FlexStyling>
                             </Grid>
                         )}
 
                         {isMobileScreens && (
-                            <Grid key={project.key} item xs={12}>
+                            <Grid
+                                key={project.key}
+                                item
+                                xs={12}
+                                marginBottom="10%"
+                            >
                                 <FlexStyling
                                     color={textPrimary}
                                     margin="10% 10% 0 10%"
                                     borderRadius="0.2rem"
                                     flexDirection="column"
                                     style={{ alignItems: "flex-start" }}
-                                    width="80%"
+                                    // width="80%"
                                     boxSizing="border-box"
                                 >
                                     <Box margin="1% 1.5%" minWidth="97%">
-                                        <Project width="100%" {...project} />
+                                        <Project {...project} />
                                     </Box>
                                 </FlexStyling>
                             </Grid>
