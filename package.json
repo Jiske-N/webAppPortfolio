@@ -1,0 +1,16 @@
+{
+  "name": "webappportfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd client && vite && cd ../",
+    "start": "cd client && vite && cd ../",
+    "build": "cd client && vite build && cd ../",
+    "lint": "cd client && eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0 && cd ../",
+    "preview": "cd client && vite preview && cd ../"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
