@@ -1,54 +1,43 @@
 import { useState } from "react";
-import { Typography, useMediaQuery, MenuItem, Menu } from "@mui/material";
+import { useMediaQuery, MenuItem, Menu } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import FlexStyling from "./FlexStyling";
+import { hover, textPrimary } from "../../theme.js";
 
-const Navbar = () => {
-    const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
-    const navigate = useNavigate();
+// not sure if I did this wrong and the project was asking for a navigation button set up similar to:
+// the projectPage and project component or the proficiencies within the resumePage
+const Navigation = () => {
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px");
-    const currentPage = useLocation().pathname;
-    // const ref = React.useRef();
+    const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
     const open = Boolean(isMobileMenuToggled);
+
+    const navigate = useNavigate();
+    const currentPage = useLocation().pathname;
+
     const handleClick = (event) => {
         setIsMobileMenuToggled(event.currentTarget.parentElement);
     };
+
     const handleClose = () => {
         setIsMobileMenuToggled(!isMobileMenuToggled);
     };
 
     return (
-        <FlexStyling padding="1rem 6%">
-            <FlexStyling gap="1.75rem">
-                <Typography
-                    fontWeight="bold"
-                    // clamp sets a minimum, preferred and maximum font size - can be used for width as well
-                    fontSize="clamp(1rem, 2rem, 2.25rem)"
-                    color="black"
-                    onClick={() => navigate("/")}
-                    sx={{
-                        "&:hover": {
-                            color: "#15253D",
-                            cursor: "pointer",
-                        },
-                    }}
-                >
-                    Jiske-N
-                </Typography>
-            </FlexStyling>
+        <>
             {/* desktop nav */}
             {isNonMobileScreens && (
                 <FlexStyling gap="2rem">
                     <MenuItem
-                        onClick={() => navigate("/about")}
+                        onClick={() => navigate("/")}
                         sx={{
+                            color: textPrimary,
                             fontWeight: "bold",
                             textDecoration:
-                                currentPage === "/about" ? "underline" : "none",
+                                currentPage === "/" ? "underline" : "none",
                             "&:hover": {
-                                color: "#15253D",
+                                color: hover,
                                 cursor: "pointer",
                             },
                         }}
@@ -58,13 +47,14 @@ const Navbar = () => {
                     <MenuItem
                         onClick={() => navigate("/portfolio")}
                         sx={{
+                            color: textPrimary,
                             fontWeight: "bold",
                             textDecoration:
                                 currentPage === "/portfolio"
                                     ? "underline"
                                     : "none",
                             "&:hover": {
-                                color: "#15253D",
+                                color: hover,
                                 cursor: "pointer",
                             },
                         }}
@@ -74,13 +64,14 @@ const Navbar = () => {
                     <MenuItem
                         onClick={() => navigate("/contact")}
                         sx={{
+                            color: textPrimary,
                             fontWeight: "bold",
                             textDecoration:
                                 currentPage === "/contact"
                                     ? "underline"
                                     : "none",
                             "&:hover": {
-                                color: "#15253D",
+                                color: hover,
                                 cursor: "pointer",
                             },
                         }}
@@ -90,13 +81,14 @@ const Navbar = () => {
                     <MenuItem
                         onClick={() => navigate("/resume")}
                         sx={{
+                            color: textPrimary,
                             fontWeight: "bold",
                             textDecoration:
                                 currentPage === "/resume"
                                     ? "underline"
                                     : "none",
                             "&:hover": {
-                                color: "#15253D",
+                                color: hover,
                                 cursor: "pointer",
                             },
                         }}
@@ -114,7 +106,7 @@ const Navbar = () => {
                             onClick={handleClick}
                             sx={{
                                 "&:hover": {
-                                    color: "#15253D",
+                                    hover,
                                     cursor: "pointer",
                                 },
                             }}
@@ -124,7 +116,7 @@ const Navbar = () => {
                             onClick={handleClick}
                             sx={{
                                 "&:hover": {
-                                    color: "#15253D",
+                                    hover,
                                     cursor: "pointer",
                                 },
                             }}
@@ -139,18 +131,18 @@ const Navbar = () => {
                     open={open}
                     onClose={handleClose}
                 >
-                    <Link to="/about">
+                    <Link to="/">
                         <MenuItem
                             onClick={handleClose}
                             sx={{
                                 fontWeight: "bold",
-                                color: "black",
+                                color: textPrimary,
                                 textDecoration:
                                     currentPage === "/contact"
                                         ? "underline"
                                         : "none",
                                 "&:hover": {
-                                    color: "#15253D",
+                                    color: hover,
                                     cursor: "pointer",
                                 },
                             }}
@@ -163,7 +155,7 @@ const Navbar = () => {
                             onClick={handleClose}
                             sx={{
                                 fontWeight: "bold",
-                                color: "black",
+                                color: textPrimary,
                                 textDecoration:
                                     currentPage === "/resume"
                                         ? "underline"
@@ -182,7 +174,7 @@ const Navbar = () => {
                             onClick={handleClose}
                             sx={{
                                 fontWeight: "bold",
-                                color: "black",
+                                color: textPrimary,
                                 textDecoration:
                                     currentPage === "/contact"
                                         ? "underline"
@@ -201,7 +193,7 @@ const Navbar = () => {
                             onClick={handleClose}
                             sx={{
                                 fontWeight: "bold",
-                                color: "black",
+                                color: textPrimary,
                                 textDecoration:
                                     currentPage === "/resume"
                                         ? "underline"
@@ -217,8 +209,8 @@ const Navbar = () => {
                     </Link>
                 </Menu>
             )}
-        </FlexStyling>
+        </>
     );
 };
 
-export default Navbar;
+export default Navigation;
