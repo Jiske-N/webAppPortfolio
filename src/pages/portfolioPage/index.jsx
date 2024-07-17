@@ -56,6 +56,14 @@ export default function Portfolio() {
             deployment:
                 "https://awesome-foursome.github.io/boardgame-bliss/other-games.html",
         },
+        {
+            key: 5,
+            title: "This Portfolio",
+            technology: "React, MUI, Vite, React-Router-Dom",
+            repository: "https://github.com/Jiske-N/webAppPortfolio",
+            screenshot: "/portfolio-screenshot.png",
+            deployment: "https://jiske-portfolio.netlify.app",
+        },
     ];
 
     return (
